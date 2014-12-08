@@ -1,4 +1,4 @@
 website-repo
 ============
 
-personal project
+personal project based on the popular site coffivity.com.
