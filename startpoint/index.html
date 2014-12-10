@@ -72,9 +72,8 @@
       </div>
     </nav>
 
-	<div id="homepage">
 	  <div class="container">
-	    <div class="row">
+	    <div id="main-body" class="row">
 		
 	        <div class="col-xs-12 col-sm-4" role="navigation">
 			  <div class="jumbotron">
@@ -84,7 +83,7 @@
 				      <a href="#"><i class="glyphicon glyphicon-pause"></i></a> 
 				      <a href="#"><i class="glyphicon glyphicon-stop"></i></a>
 				    <h5>Now Playing: </h5>
-					
+	
 					<!-- might need empty <p> here -->
 				  </div>
 					
@@ -92,6 +91,7 @@
 				    <a href="#"><i class="glyphicon glyphicon-plus "></i></a>
 				    <a href="#"><i class="glyphicon glyphicon-minus"></i></a>
 				    <h5 id="volume-ui">Volume:</h5>
+					
 					<!-- might need empty <p> here -->
 				  </div>
 			    </div>
@@ -99,15 +99,21 @@
 			  <div id="song-list" class="list-group">
 				<h3>Song List</h3>
 				<p>Pick a song:</p>
-				<li class="list-group-item">Song #1</li>
-				<li class="list-group-item">Song #2</li>        
-				<li class="list-group-item">Song #3</li>
-				<li class="list-group-item">Song #4</li>
+				<li id="song-1-button" class="list-group-item">Song #1</li>
+				<li id="song-2-button" class="list-group-item">Song #2</li>        
+				<li id="song-3-button" class="list-group-item">Song #3</li>
+				<li id="song-4-button" class="list-group-item">Song #4</li>
 			  </div>
 			 </div>
 			</div>
+			
+			<!-- Begin body output//page info that will change dynamically -->
 		
 	     <div id="body-output" class="col-md-7 col-lg-8">
+		 
+		 <!--  landing content below -->
+				   
+		   <div class="content" id="landing-content">
 	     	<div class="jumbotron">
 	       		<h1>Hello and welcome!</h1>
 	       		<p>Welcome to my productivity suite. This site is designed for people who want a webpage that helps them maintain their focus. 
@@ -121,21 +127,56 @@
 	     		This site will feature focus aiding soundtracks, various simple productivity tools and a non-distracting background. </p>
 	       		<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
 	         </div>
+		   </div>
+		   
+
+		   <!-- about us content below -->
+		   
+		    <div class="content hide" id="about-content">
+	     	  <div class="jumbotron">
+	         	<h1>About Page</h1>
+	         	<p> </p>
+	         	<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+	     	  </div>
+		     
+	     	  <div class="jumbotron">
+	         	<h1>More about me:</h1>
+	         	<p> </p>
+	         	<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+	          </div>
+		   </div>
+		   
+		  <!-- contact info below -->
+		  
+		  <div class="content hide" id="about-content">
+	     	  <div class="jumbotron">
+	         	<h1>Contact Info</h1>
+	         	<p> </p>
+	         	<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+	     	  </div>
+		     
+	     	  <div class="jumbotron">
+	         	<h1>Email me:</h1>
+	         	<p> </p>
+	         	<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+	          </div>
+		   </div>
+		  
+		  
          </div>
 		 
-	    </div>
-      </div>
-	</div>
+	    </div> <!-- end main body -->
+      </div> <!-- end container -->
 
 		<footer>
-		 <div class="container">
+		  <div class="container">
 		   <a class="navbar-brand" href="https://twitter.com/TYPYCYL"><i class="fa fa-twitter fa-2x"></i> </a>
 		   <a class="navbar-brand" href="https://www.linkedin.com/pub/matt-pengelly/86/ba8/575"><i class="fa fa-linkedin fa-2x"></i> </a>
 		   <a class="navbar-brand" href="http://instagram.com/pen_jelly"><i class="fa fa-instagram fa-2x"></i> </a>
 		   <a class="navbar-brand" href="https://github.com/mcpengelly"><i class="fa fa-github fa-2x"></i></a>
 		   
 		   <p class="pull-right">Matt Pengelly 2014. All Rights Reserved</p>
-		 </div>
+		  </div>
 		</footer>
 
 	
