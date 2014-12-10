@@ -16,6 +16,13 @@ $(document).ready(function(){
 		$("#now-playing-audio").mute;
 	});
 	
-
+	$("#song-1-button").click(function(){
+		$("audio-src").html('id="audio-src" src="audio/track-1.mp3" type="audio/mpeg"');
+	
+	});
+	$("#song-2-button").click(function(){
+		$("audio-src").html('id="audio-src" src="audio/track-2.mp3" type="audio/mpeg"');
+	
+	});
 });
 
