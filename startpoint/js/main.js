@@ -1,27 +1,41 @@
 
 $(document).ready(function(){
+
+	var audioPlayer = $("#now-playing-audio");
+	var audioSrc = $("#audio-src");
+	
 	$(".navbar li, .container li").hover(function(){
 	  $(this).addClass("active");
 	  },function(){
 	  $(this).removeClass("active");
 	});
 	
-	$("#volume-up-button").click(function(){
-		$("#now-playing-audio").volume += 0.1;
+	$("#play-button").click(function(){
+		audioPlayer.play;
 	});
-	$("#volume-down-button").click(function(){
-		$("#now-playing-audio").volume -= 0.1;
+	
+	$("#pause-button").click(function(){
+		audioPlayer.pause;
 	});
+	
 	$("#mute-button").click(function(){
-		$("#now-playing-audio").mute;
+		audioPlayer.mute;
+	});
+	
+	$("#volume-up-button").click(function(){
+		audioPlayer.volume += 0.1;
+	});
+	
+	$("#volume-down-button").click(function(){
+		audioPlayer.volume -= 0.1;
 	});
 	
 	$("#song-1-button").click(function(){
-		$("audio-src").html('id="audio-src" src="audio/track-1.mp3" type="audio/mpeg"');
+		audioSrc.html('id="audio-src" src="audio/track-1.mp3" type="audio/mpeg"');
 	
 	});
 	$("#song-2-button").click(function(){
-		$("audio-src").html('id="audio-src" src="audio/track-2.mp3" type="audio/mpeg"');
+		$("#audio-src").html('id="audio-src" src="audio/track-2.mp3" type="audio/mpeg"');
 	
 	});
 });
