@@ -79,24 +79,23 @@
 			  <div class="jumbotron">
 			    <div class="list-group">
 				  <div class="list-group-item">
-				      <a href="#"><i class="glyphicon glyphicon-play"></i></a> 
-				      <a href="#"><i class="glyphicon glyphicon-pause"></i></a> 
-				      <a href="#"><i class="glyphicon glyphicon-stop"></i></a>
+				      <a id="play-button" href="#"><i class="glyphicon glyphicon-play"></i></a> 
+				      <a id="pause-button" href="#"><i class="glyphicon glyphicon-pause"></i></a> 
+				      <a id="stop-button" href="#"><i class="glyphicon glyphicon-stop"></i></a>
 				    <h5>Now Playing: </h5>
 					<!-- audio player -->
-					<audio id="now-playing-audio" autoplay loop> 
+					<audio id="myaudio" autoplay loop> 
 					<source id="audio-src" src="audio/track-1.mp3" type="audio/mpeg">
 					</audio>
 	
 					<!-- might need empty <p> here -->
 				  </div>
 					
-					
 						
 					<!-- ensure colume up and down buttons work-->
 				  <div class="list-group-item">
-				    <a id="volume-up-button"><i class="glyphicon glyphicon-plus"></i></a>
-				    <a id="volume-down-button"><i class="glyphicon glyphicon-minus"></i></a>
+				  <a id="volume-up-button"> <i  class="glyphicon glyphicon-plus"></i></a>
+				  <a id="volume-down-button" ><i class="glyphicon glyphicon-minus"></i></a>
 				    <h5 id="volume-ui">Volume:</h5>
 					
 					<!-- might need empty <p> here -->
