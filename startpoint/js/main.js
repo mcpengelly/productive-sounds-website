@@ -111,6 +111,12 @@ $(document).ready(function(){
 	$("#song-2-button").click(function(){
 
 	});
+	$("#song-3-button").click(function(){
+
+	});
+	$("#song-4-button").click(function(){
+
+	});
 
 });
 
