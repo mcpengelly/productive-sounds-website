@@ -62,13 +62,13 @@ $(document).ready(function(){
 	//audio button controls //
 	$("#volume-up-button").click(function( ) {
 		audioPlayer.volume += 0.1;
-		//display volume * 10 as a simple volume indicator
+		//display volume * 10,userfriendly volume indicator
 		$( "#current-volume" ).text( "Volume: " + Math.round(audioPlayer.volume * 10));
 	});
 
 	$("#volume-down-button").click(function(){
 		audioPlayer.volume -= 0.1;
-		//display volume * 10 as a simple volume indicator
+		//display volume * 10, userfriendly volume indicator
 		$( "#current-volume" ).text( "Volume: " + Math.round(audioPlayer.volume * 10));
 	});
 
