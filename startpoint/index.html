@@ -24,10 +24,11 @@
 			.row{
 				padding-top:25px;
 			}
-			
-			.navbar-default{
-				background-color:transparent;
-				border: none;
+			.darken{
+				background-color:black;
+			}
+			.dim{
+				background-color:grey;
 			}
 
         </style>
@@ -39,6 +40,7 @@
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
+	<div id="surround-this">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -57,11 +59,11 @@
         <div id="navbar" class="navbar-collapse collapse">
 		  <ul class="nav navbar-nav">
             <li id="lights-button"><a href="#">Lights off <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Music</a></li>
+            <li id="mute-button"><a href="#">Mute</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tools <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
-              <li id="pomodoro-button"><a href="#">Pomodoro timer</a></li>
+              <li id="pomodoro-button"><a href="#">Pomodoro timer</a></li> 
               <li id="notepad-button"><a href="#">Notepad</a></li>
             </ul>
 			<li id="about-button"><a href="#">About</a></li>
@@ -79,10 +81,11 @@
 			  <div class="jumbotron">
 			    <div class="list-group">
 				  <div class="list-group-item">
-				      <a id="play-button" href="#"><i class="glyphicon glyphicon-play"></i></a> 
-				      <a id="pause-button" href="#"><i class="glyphicon glyphicon-pause"></i></a> 
-				      <a id="stop-button" href="#"><i class="glyphicon glyphicon-stop"></i></a>
-				    <h5>Now Playing: </h5>
+				      <a id="play-button" href="#" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-play"></span></a> 
+				      <a id="pause-button" href="#" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-pause"></span></a> 
+				      <a id="stop-button" href="#" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-stop"></span></a>
+					  
+				    <h5 id="now-playing"></h5>
 					<!-- audio player -->
 					<audio id="myaudio" loop> 
 					<source id="audio-src" src="audio/track-1.mp3" type="audio/mpeg">
@@ -94,21 +97,22 @@
 						
 					<!-- ensure colume up and down buttons work-->
 				  <div class="list-group-item">
-				  <a id="volume-up-button"> <i  class="glyphicon glyphicon-plus"></i></a>
-				  <a id="volume-down-button" ><i class="glyphicon glyphicon-minus"></i></a>
-				    <h5 id="volume-ui">Volume:</h5>
-					
-					<!-- might need empty <p> here -->
+				  <a id="volume-up-button" href="#" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-plus"></span></a>
+				  <a id="volume-down-button" href="#" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-minus"></span></a>
+						<h5 id="current-volume"> </h5>
+						<!-- might need empty <p> here -->
 				  </div>
 			    </div>
 	
 			  <div id="song-list" class="list-group">
 				<h3>Song List</h3>
 				<p>Pick a song:</p>
-				<li id="song-1-button" class="list-group-item">Song #1</li>
-				<li id="song-2-button" class="list-group-item">Song #2</li>        
-				<li id="song-3-button" class="list-group-item">Song #3</li>
-				<li id="song-4-button" class="list-group-item">Song #4</li>
+				<ol>
+				  <li id="song-1-button" class="list-group-item">Song #1</li>
+				  <li id="song-2-button" class="list-group-item">Song #2</li>        
+				  <li id="song-3-button" class="list-group-item">Song #3</li>
+				  <li id="song-4-button" class="list-group-item">Song #4</li>
+				</ol>
 			  </div>
 			 </div>
 			</div>
@@ -153,7 +157,7 @@
 		   
 		  <!-- contact info below -->
 		  
-		  <div class="content hide" id="about-content">
+		  <div class="content hide" id="contact-content">
 	     	  <div class="jumbotron">
 	         	<h1>Contact Info</h1>
 	         	<p> </p>
@@ -183,7 +187,7 @@
 		  </div>
 		</footer>
 
-	
+	</div>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
 
