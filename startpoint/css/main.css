@@ -11,6 +11,18 @@
 .glyphicon-minus{
 	font-size: 2em;
 }
+.jumbotron{
+	background-color:#F4F7F0;
+}
+.row{
+	padding-top:25px;
+}
+.darken{
+	background-color:black;
+}
+.dim{
+	background-color:grey;
+}
 
 
 

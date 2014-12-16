@@ -97,25 +97,34 @@ $(document).ready(function(){
 		audioPlayer.currentTime = 0;
 	});
 
-	var song1 = "audio/track-1.mp3";
-	var song2 = "audio/track-2.mp3";
+	var song1 = "track-1.mp3";
+	var song2 = "track-2.mp3";
+	var song3 = "track-3.mp3";
+	var song4 = "track-4.mp3";
 	
-	//not functional atm
+	//TODO: refactor below
+	//follow DRY principle and make function
 	$("#song-1-button").click(function(){
-		audioPlayer.pause();
-		audioSrc.attr('src', song1);
-		audioSrc.load();
-		audioPlayer.play();
+		audioPlayer.setAttribute('src', 'audio/' + song1);
+		audioPlayer.load();
+        audioPlayer.play();
 	});
 
 	$("#song-2-button").click(function(){
+		audioPlayer.setAttribute('src', 'audio/' + song2);
+		audioPlayer.load();
+        audioPlayer.play();
 
 	});
 	$("#song-3-button").click(function(){
-
+		audioPlayer.setAttribute('src', 'audio/' + song3);
+		audioPlayer.load();
+        audioPlayer.play();
 	});
 	$("#song-4-button").click(function(){
-
+		audioPlayer.setAttribute('src', 'audio/' + song4);
+		audioPlayer.load();
+        audioPlayer.play();
 	});
 
 });
