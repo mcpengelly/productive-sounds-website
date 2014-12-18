@@ -6,13 +6,13 @@ $(document).ready(function(){
 	var defaultVolume = 0.3;
 	var lights = true; //lights start on.
 
-	
 	if(audioPlayer !== null){
+	 audioPlayer.volume = defaultVolume;
 	 audioPlayer.load();
-	 audioPlayer.volume = defaultVolume;	
-	 audioPlayer.play();
+     audioPlayer.play();
+	$( "#now-playing" ).text( "Now Playing: " + "track-1.mp3");
+	
 	 alert("audio player initialized");
-	 $( "#now-playing" ).text( "Now Playing: Track 1");
 	 $( "#current-volume" ).text( "Volume: " + audioPlayer.volume * 10);
 		
 	}
@@ -31,38 +31,82 @@ $(document).ready(function(){
 	// IF BODY-OUTPUT 1ST CHILD HAS CLASS CONTENT AND IS NOT ALREADY ON LANDING CONTENT,
 	//{ REMOVE IT AND PUT LANDING CONTENT }
 	//.body-output .content  // hide?
+	
+	//code works but should be refactored
+	// add fadeable class
+	
+	function HideContents(){
+		$("#landing-content").fadeOut( 1000, function() {
+			$("#landing-content").addClass("hide");
+
+		});
+		$("#contact-content").fadeOut( 1000, function() {
+			$("#contact-content").addClass("hide");
+	
+		});
+		$("#about-content").fadeOut( 1000, function() {
+			$("#about-content").addClass("hide");
+	
+		});
+		$("#notepad-content").fadeOut( 1000, function() {
+			$("#about-content").addClass("hide");
+	
+		});
+		$("#pomodoro-content").fadeOut( 1000, function() {
+			$("#about-content").addClass("hide");
+	
+		});
+	}
+	
 	$("#home-button").click(function( ) {
-		$("#about-content").fadeTo("slow", 0.5);
-		$("#landing-content").removeClass("hide");
+		HideContents();
+		$("#landing-content").fadeIn(1000, function(){ 
+			$("#landing-content").removeClass("hide");
+		});
 	});
 	
 	$("#about-button").click(function( ) {
-		$("#landing-content").addClass("hide");
-		$("#about-content").removeClass("hide");
+		HideContents();		
+		$("#about-content").fadeIn(1000, function(){ 
+			$("#about-content").removeClass("hide");
+		});
 	});
 	
 	$("#contact-button").click(function( ) {
+		HideContents();		
+		$("#contact-content").fadeIn(1000, function(){ 
+			$("#contact-content").removeClass("hide");
+		});
 
 	});
+	
+	
 	
 	$("#lights-button").click(function( ) {
 		// change background to black and dim page content
 		if(lights === true){
-			$("#surround-this").addClass("darken");
+			$("#mod-this").addClass("darken");
 			$(".jumbotron").addClass("dim");
 			lights = false; // set ligths flag to off
 		}
 		else{
-			$("#surround-this").removeClass("darken");
+			$("#mod-this").removeClass("darken");
 			$(".jumbotron").removeClass("dim");
 			lights = true; //set lights flag to on
 		}
 	});
+	
 	$("#pomodoro-button").click(function( ) {
-		
+		HideContents();		
+		$("#pomodoro-content").fadeIn(1000, function(){ 
+			$("#pomodoro-content").removeClass("hide");
+		});
 	});
 	$("#notepad-button").click(function( ) {
-		
+		HideContents();		
+		$("#notepad-content").fadeIn(1000, function(){ 
+			$("#notepad-content").removeClass("hide");
+		});
 	});
 	
 	//audio button controls //
@@ -103,34 +147,33 @@ $(document).ready(function(){
 		audioPlayer.currentTime = 0;
 	});
 
-	var song1 = "track-1.mp3";
-	var song2 = "track-2.mp3";
-	var song3 = "track-3.mp3";
-	var song4 = "track-4.mp3";
-	
-	//TODO: refactor below
-	//follow DRY principle and make function
-	$("#song-1-button").click(function(){
-		audioPlayer.setAttribute('src', 'audio/' + song1);
+	// tracklist stuff below
+	var songlist = ["track-1.mp3",
+	                "track-2.mp3",
+	                "track-3.mp3",
+	                "track-4.mp3"];
+
+	function ChangeSong(songChoice){
+		audioPlayer.setAttribute('src', 'audio/' + songChoice);
 		audioPlayer.load();
         audioPlayer.play();
+		$( "#now-playing" ).text( "Now Playing: " + songChoice);
+	}
+
+	$("#song-1-button").click(function(){
+		ChangeSong(songlist[0]);
 	});
 
 	$("#song-2-button").click(function(){
-		audioPlayer.setAttribute('src', 'audio/' + song2);
-		audioPlayer.load();
-        audioPlayer.play();
-
+		ChangeSong(songlist[1]);
 	});
+	
 	$("#song-3-button").click(function(){
-		audioPlayer.setAttribute('src', 'audio/' + song3);
-		audioPlayer.load();
-        audioPlayer.play();
+		ChangeSong(songlist[2]);
 	});
+	
 	$("#song-4-button").click(function(){
-		audioPlayer.setAttribute('src', 'audio/' + song4);
-		audioPlayer.load();
-        audioPlayer.play();
+		ChangeSong(songlist[3]);
 	});
 
 });
