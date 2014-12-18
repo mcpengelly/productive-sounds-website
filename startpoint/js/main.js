@@ -25,8 +25,14 @@ $(document).ready(function(){
 	});
 	
 	//page content controls
+	
+	//TIPS: use body-content:first??
+	//use the on complete provided on the fadeto function to remove the element from the screen after fading
+	// IF BODY-OUTPUT 1ST CHILD HAS CLASS CONTENT AND IS NOT ALREADY ON LANDING CONTENT,
+	//{ REMOVE IT AND PUT LANDING CONTENT }
+	//.body-output .content  // hide?
 	$("#home-button").click(function( ) {
-		$("#about-content").addClass("hide");
+		$("#about-content").fadeTo("slow", 0.5);
 		$("#landing-content").removeClass("hide");
 	});
 	
