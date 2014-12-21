@@ -11,6 +11,9 @@
 .glyphicon-minus{
 	font-size: 2em;
 }
+#mod-this{
+	min-height:1025px;
+}
 .jumbotron{
 	background-color:#F4F7F0;
 }
