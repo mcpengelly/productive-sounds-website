@@ -17,67 +17,65 @@ $(document).ready(function(){
 		
 	}
 	
-	//event handlers below //
-	$(".navbar li, .container li").hover(function(){
+	//init: fade out all page content other then landing content
+	$("#about-content").fadeOut("fast");
+	$("#contact-content").fadeOut("fast");
+	$("#pomodoro-content").fadeOut("fast");
+	$("#notepad-content").fadeOut("fast");
+	
+	//hover events for all list item clickables within container and navbar below //
+	$(".navbar li").hover(function(){
 		$(this).addClass("active");
 		},function(){
 		$(this).removeClass("active");
 	});
 	
-	//page content controls
+	//code works but should be refactored to be made more modular.
+	//could use e.preventDefault to prevent the page from moving to top of page when a anchor tag is clicked
 	
-	//TIPS: use body-content:first??
-	//use the on complete provided on the fadeto function to remove the element from the screen after fading
-	// IF BODY-OUTPUT 1ST CHILD HAS CLASS CONTENT AND IS NOT ALREADY ON LANDING CONTENT,
-	//{ REMOVE IT AND PUT LANDING CONTENT }
-	//.body-output .content  // hide?
-	
-	//code works but should be refactored
-	// add fadeable class
-	
-	function HideContents(){
-		$("#landing-content").fadeOut( 1000, function() {
-			$("#landing-content").addClass("hide");
-
-		});
-		$("#contact-content").fadeOut( 1000, function() {
-			$("#contact-content").addClass("hide");
-	
-		});
-		$("#about-content").fadeOut( 1000, function() {
-			$("#about-content").addClass("hide");
-	
-		});
-		$("#notepad-content").fadeOut( 1000, function() {
-			$("#about-content").addClass("hide");
-	
-		});
-		$("#pomodoro-content").fadeOut( 1000, function() {
-			$("#about-content").addClass("hide");
-	
-		});
-	}
-	
+	//PAGE CONTENT BUTTONS
 	$("#home-button").click(function( ) {
-		HideContents();
-		$("#landing-content").fadeIn(1000, function(){ 
-			$("#landing-content").removeClass("hide");
+		//find whatever content is currently displaying fade it out then fade in landing content.
+		$("#body-output").find(".active").fadeOut("slow", function(){ 
+			$(this).removeClass("active");
+			$("#landing-content").fadeIn("slow");
+			$("#landing-content").addClass("active");
 		});
+
 	});
 	
 	$("#about-button").click(function( ) {
-		HideContents();		
-		$("#about-content").fadeIn(1000, function(){ 
-			$("#about-content").removeClass("hide");
-		});
-	});
-	
-	$("#contact-button").click(function( ) {
-		HideContents();		
-		$("#contact-content").fadeIn(1000, function(){ 
-			$("#contact-content").removeClass("hide");
+		//find whatever content is currently displaying fade it out then fade in about content.
+		$("#body-output").find(".active").fadeOut("slow", function(){ 
+			$(this).removeClass("active");
+			$("#about-content").fadeIn("slow");
+			$("#about-content").addClass("active");
 		});
 
+	});
+	
+	$("#contact-button").click(function( ) {	
+		//find whatever content is currently displaying fade it out then fade in about content. use active as indicator of which body content is displaying
+		$("#body-output").find(".active").fadeOut("slow", function(){ 
+			$(this).removeClass("active");
+			$("#contact-content").fadeIn("slow");
+			$("#contact-content").addClass("active");
+		});
+	});
+		
+	$("#pomodoro-button").click(function( ) {
+		$("#body-output").find(".active").fadeOut("slow", function(){ 
+			$(this).removeClass("active");
+			$("#pomodoro-content").fadeIn("slow");
+			$("#pomodoro-content").addClass("active");
+		});
+	});
+	$("#notepad-button").click(function( ) {
+		$("#body-output").find(".active").fadeOut("slow", function(){ 
+			$(this).removeClass("active");
+			$("#notepad-content").fadeIn("slow");
+			$("#notepad-content").addClass("active");
+		});
 	});
 	
 	
@@ -95,20 +93,7 @@ $(document).ready(function(){
 			lights = true; //set lights flag to on
 		}
 	});
-	
-	$("#pomodoro-button").click(function( ) {
-		HideContents();		
-		$("#pomodoro-content").fadeIn(1000, function(){ 
-			$("#pomodoro-content").removeClass("hide");
-		});
-	});
-	$("#notepad-button").click(function( ) {
-		HideContents();		
-		$("#notepad-content").fadeIn(1000, function(){ 
-			$("#notepad-content").removeClass("hide");
-		});
-	});
-	
+
 	//audio button controls //
 	$("#volume-up-button").click(function( ) {
 		audioPlayer.volume += 0.1;
@@ -119,7 +104,7 @@ $(document).ready(function(){
 	$("#volume-down-button").click(function(){
 		audioPlayer.volume -= 0.1;
 		//display volume * 10, userfriendly volume indicator
-		$( "#current-volume" ).text( "Volume: " + Math.round(audioPlayer.volume * 10));
+		$( "#current-volume" ).text( "Volume: " + Math.floor(audioPlayer.volume * 10));
 	});
 
 	$("#pause-button").click(function(){
