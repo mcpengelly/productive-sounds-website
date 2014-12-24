@@ -126,7 +126,6 @@ $(document).ready(function(){
 		else{ // else unmute it
 			audioPlayer.muted = false;
 		}	
-		
 	});
 
 	$("#stop-button").click(function(){

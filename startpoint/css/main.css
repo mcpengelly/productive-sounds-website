@@ -26,6 +26,8 @@ body {
 .row{
 	padding-top:25px;
 }
+
+/*lights out classes below */
 .darken{
 	background-color:black;
 }
