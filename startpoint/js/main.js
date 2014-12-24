@@ -6,6 +6,8 @@ $(document).ready(function(){
 	var defaultVolume = 0.3;
 	var lights = true; //lights start on.
 
+	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+			
 	//init: fade out all page content other then landing content
 	$("#about-content").fadeOut("fast");
 	$("#contact-content").fadeOut("fast");
@@ -25,6 +27,12 @@ $(document).ready(function(){
 	
 	//hover events for all list item clickables within container and navbar below //
 	$(".navbar li").hover(function(){
+		$(this).addClass("active");
+		},function(){
+		$(this).removeClass("active");
+	});
+	
+	$(".container li").hover(function(){
 		$(this).addClass("active");
 		},function(){
 		$(this).removeClass("active");

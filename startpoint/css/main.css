@@ -14,6 +14,15 @@
 #mod-this{
 	min-height:1025px;
 }
+#twitter-jumbo{
+	min-height:350px;
+}
+h1, h2, h3{
+ font-family: 'Pacifico', cursive;
+}
+p, li, #home-button{
+ font-family: 'Roboto Slab', serif;
+}
 body {
 	background-color:#CDE8D6;
 }
@@ -44,6 +53,8 @@ body {
 .color-primary-2 { color: #9DA7BC }
 .color-primary-3 { color: #465E94 }
 .color-primary-4 { color: #22438F } 
+
+
 */
 
 
