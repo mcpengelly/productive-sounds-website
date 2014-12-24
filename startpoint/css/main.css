@@ -4,13 +4,6 @@
    Author's custom styles
    ========================================================================== */
 
-.glyphicon-play,
-.glyphicon-pause,
-.glyphicon-stop,
-.glyphicon-plus,
-.glyphicon-minus{
-	font-size: 2em;
-}
 #mod-this{
 	min-height:1025px;
 }
