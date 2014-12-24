@@ -14,8 +14,14 @@
 #mod-this{
 	min-height:1025px;
 }
+body {
+	background-color:#CDE8D6;
+}
 .jumbotron{
-	background-color:#F4F7F0;
+	background-color:#A7CCCA;
+}
+.list-group-item{
+	background-color:#E6E6E6;
 }
 .row{
 	padding-top:25px;
@@ -24,9 +30,21 @@
 	background-color:black;
 }
 .dim{
-	background-color:grey;
+	background-color:#666666;
+}
+.dim-2{
+	background-color:#999999;
 }
 
+
+
+/*
+.color-primary-0 { color: #7A8AAE }  
+.color-primary-1 { color: #C0C3CC }
+.color-primary-2 { color: #9DA7BC }
+.color-primary-3 { color: #465E94 }
+.color-primary-4 { color: #22438F } 
+*/
 
 
 

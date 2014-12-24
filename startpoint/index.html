@@ -14,10 +14,7 @@
 		<link rel="stylesheet" href="css/slider.css">
 		
         <style>
-            body {
-				padding-bottom:5px;
-				background-color:#03355B;
-            }
+
         </style>
 		
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
@@ -31,7 +28,7 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -68,9 +65,9 @@
 			  <div class="jumbotron">
 			    <div class="list-group">
 				  <div class="list-group-item">
-				      <a id="play-button" href="#/" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-play"></span></a> 
-				      <a id="pause-button" href="#/" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pause"></span></a> 
-				      <a id="stop-button" href="#/" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-stop"></span></a>
+				      <button id="play-button" href="#/" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-play"></span></button> 
+				      <button id="pause-button" href="#/" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pause"></span></button> 
+				      <button id="stop-button" href="#/" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-stop"></span></button>
 					  
 				    <h5 id="now-playing"></h5>
 					<!-- audio player -->
@@ -78,16 +75,14 @@
 					<source id="audio-src" src="audio/track-1.mp3" type="audio/mpeg">
 					</audio>
 	
-					<!-- might need empty <p> here -->
 				  </div>
 					
 						
 					<!-- ensure colume up and down buttons work-->
 				  <div class="list-group-item">
-				  <a id="volume-up-button" href="#/" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-plus"></span></a>
-				  <a id="volume-down-button" href="#/" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-minus"></span></a>
+				  <button id="volume-up-button" href="#/" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-plus"></span></button>
+				  <button id="volume-down-button" href="#/" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-minus"></span></button>
 						<h5 id="current-volume"> </h5>
-						<!-- might need empty <p> here -->
 				  </div>
 			    </div>
 	

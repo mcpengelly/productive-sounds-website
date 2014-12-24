@@ -6,22 +6,22 @@ $(document).ready(function(){
 	var defaultVolume = 0.3;
 	var lights = true; //lights start on.
 
-	if(audioPlayer !== null){
-	 audioPlayer.volume = defaultVolume;
-	 audioPlayer.load();
-     audioPlayer.play();
-	$( "#now-playing" ).text( "Now Playing: " + "track-1.mp3");
-	
-	 alert("audio player initialized");
-	 $( "#current-volume" ).text( "Volume: " + audioPlayer.volume * 10);
-		
-	}
-	
 	//init: fade out all page content other then landing content
 	$("#about-content").fadeOut("fast");
 	$("#contact-content").fadeOut("fast");
 	$("#pomodoro-content").fadeOut("fast");
 	$("#notepad-content").fadeOut("fast");
+	
+	//if audioPlayer isnt null initialize it.
+	if(audioPlayer !== null){
+	  audioPlayer.volume = defaultVolume;
+	  audioPlayer.load();
+      audioPlayer.play();
+	  $( "#now-playing" ).text( "Now Playing: " + "track-1.mp3");
+	
+	  alert("audio player initialized");
+	  $( "#current-volume" ).text( "Volume: " + audioPlayer.volume * 10);	
+	}
 	
 	//hover events for all list item clickables within container and navbar below //
 	$(".navbar li").hover(function(){
@@ -85,11 +85,13 @@ $(document).ready(function(){
 		if(lights === true){
 			$("#mod-this").addClass("darken");
 			$(".jumbotron").addClass("dim");
+			$(".list-group-item").addClass("dim-2");
 			lights = false; // set ligths flag to off
 		}
 		else{
 			$("#mod-this").removeClass("darken");
 			$(".jumbotron").removeClass("dim");
+			$(".list-group-item").removeClass("dim-2");
 			lights = true; //set lights flag to on
 		}
 	});
@@ -145,6 +147,7 @@ $(document).ready(function(){
 		$( "#now-playing" ).text( "Now Playing: " + songChoice);
 	}
 
+	//song selection buttons
 	$("#song-1-button").click(function(){
 		ChangeSong(songlist[0]);
 	});
