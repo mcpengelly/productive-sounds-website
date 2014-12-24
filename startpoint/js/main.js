@@ -82,6 +82,7 @@ $(document).ready(function(){
 	
 	$("#lights-button").click(function( ) {
 		// change background to black and dim page content
+		//if lights are on turn them off else turn them back on.
 		if(lights === true){
 			$("#mod-this").addClass("darken");
 			$(".jumbotron").addClass("dim");
@@ -146,7 +147,7 @@ $(document).ready(function(){
 		$( "#now-playing" ).text( "Now Playing: " + songChoice);
 	}
 
-	//song selection buttons
+	//song selection button event handlers
 	$("#song-1-button").click(function(){
 		ChangeSong(songlist[0]);
 	});
