@@ -26,13 +26,8 @@ $(document).ready(function(){
 	}
 	
 	//hover events for all list item clickables within container and navbar below //
-	$(".navbar li").hover(function(){
-		$(this).addClass("active");
-		},function(){
-		$(this).removeClass("active");
-	});
 	
-	$(".container li").hover(function(){
+	$("#song-list li").hover(function(){
 		$(this).addClass("active");
 		},function(){
 		$(this).removeClass("active");
@@ -92,12 +87,14 @@ $(document).ready(function(){
 		// change background to black and dim page content
 		//if lights are on turn them off else turn them back on.
 		if(lights === true){
+			$(this).addClass("active");
 			$("#mod-this").addClass("darken");
 			$(".jumbotron").addClass("dim");
 			$(".list-group-item").addClass("dim-2");
 			lights = false; // set ligths flag to off
 		}
 		else{
+			$(this).removeClass("active");
 			$("#mod-this").removeClass("darken");
 			$(".jumbotron").removeClass("dim");
 			$(".list-group-item").removeClass("dim-2");
@@ -129,10 +126,12 @@ $(document).ready(function(){
 	$("#mute-button").click(function(){
 	//if audio is not muted when clicked, mute it
 		if(audioPlayer.muted === false){
+			$(this).addClass("active");
 			audioPlayer.muted = true;
 			//add indication that were muted
 		}
 		else{ // else unmute it
+			$(this).removeClass("active");
 			audioPlayer.muted = false;
 		}	
 	});
