@@ -20,6 +20,11 @@
 		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 		
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+		
+		<script>
+
+		</script>
+		
     </head>
     <body>
 	<div id="mod-this">
@@ -40,7 +45,7 @@
 		
         <div id="navbar" class="navbar-collapse collapse">
 		  <ul class="nav navbar-nav">
-            <li id="lights-button"><a href="#/"><i class="fa fa-lightbulb-o"></i> Lights off <span class="sr-only">(current)</span></a></li>
+            <li id="lights-button"><a href="#/"><i class="fa fa-lightbulb-o"></i> Lights<span class="sr-only">(current)</span></a></li>
             <li id="mute-button"><a href="#/">Mute</a></li>
             <li class="dropdown">
               <a href="#/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tools <span class="caret"></span></a>
@@ -79,8 +84,8 @@
 						
 					<!-- ensure colume up and down buttons work-->
 				  <div class="list-group-item">
-				  <button id="volume-up-button" href="#/" class="btn btn-primary btn-xs"><i class="fa fa-volume-up fa-2x"></i></button>
 				  <button id="volume-down-button" href="#/" class="btn btn-primary btn-xs"><span class="fa fa-volume-down fa-2x"></span></button>
+				  <button id="volume-up-button" href="#/" class="btn btn-primary btn-xs"><i class="fa fa-volume-up fa-2x"></i></button>
 						<h5 id="current-volume"> </h5>
 				  </div>
 			    </div>
@@ -172,14 +177,15 @@
 	         	<p>The Pomodoro timer is a productivity timer that is designed to help you be at your most productive. 
 				A typical pomodoro is 30 minutes long, 25 minutes of work, then 5 minutes of break forcing you to move around and stay active.
 				Some people see pomodoro timers as a life hack and believe that it helps them focus better and for a longer period of time. </p>
-	         	<p><a class="btn btn-success btn-lg" href="http://pomodorotechnique.com/" role="button">Learn about pomodoro &raquo;</a></p>
+	         	<p><a class="btn btn-primary btn-lg" href="http://pomodorotechnique.com/" role="button">Learn about pomodoro &raquo;</a></p>
 				
 
 	     	  </div>
 		     
 	     	  <div class="jumbotron">
 	         	<h2>tomato</h2>
-	         	<p> </p>
+				<p id="timer-display">display</p>
+				<p><a id="timer-button" class="btn btn-success btn-lg" role="button">Start timer</a></p>
 	          </div>
 		   </div>
 		  

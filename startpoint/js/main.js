@@ -14,6 +14,23 @@ $(document).ready(function(){
 	$("#pomodoro-content").fadeOut("fast");
 	$("#notepad-content").fadeOut("fast");
 	
+
+	$("#timer-button").click(function(){
+		function updateMessage(){
+			var date = new Date();
+			var display = document.getElementById('timer-display');
+			display.innerHTML = "The time is: " + date.getSeconds();
+		}
+		
+		var timer = setInterval(updateMessage, 1000);
+		
+		function stopMsgUpdate(){
+			clearInterval(timer);
+		}
+			
+		setTimeout(stopMsgUpdate, 1000 * 20);
+	});
+	
 	//if audioPlayer isnt null initialize it.
 	if(audioPlayer !== null){
 	  audioPlayer.volume = defaultVolume;
@@ -80,8 +97,6 @@ $(document).ready(function(){
 			$("#notepad-content").addClass("active");
 		});
 	});
-	
-	
 	
 	$("#lights-button").click(function( ) {
 		// change background to black and dim page content
