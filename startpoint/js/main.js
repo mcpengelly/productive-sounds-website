@@ -16,19 +16,23 @@ $(document).ready(function(){
 	
 
 	$("#timer-button").click(function(){
-		function updateMessage(){
-			var date = new Date();
-			var display = document.getElementById('timer-display');
-			display.innerHTML = "The time is: " + date.getSeconds();
+		var minutes = 25;
+		var seconds = 60;
+		var countdown = seconds * minutes;
+		var display = document.getElementById('timer-display');
+		
+		function timerTick(){
+			countdown--;
+			display.innerHTML = "Time remaining: " + countdown/60;
 		}
 		
-		var timer = setInterval(updateMessage, 1000);
+		var timer = setInterval(timerTick, 1000);
 		
 		function stopMsgUpdate(){
 			clearInterval(timer);
 		}
 			
-		setTimeout(stopMsgUpdate, 1000 * 20);
+		setTimeout(stopMsgUpdate, 1000 * seconds * minutes);
 	});
 	
 	//if audioPlayer isnt null initialize it.
