@@ -32,7 +32,7 @@ $(document).ready(function(){
 			clearInterval(timer);
 		}
 			
-		setTimeout(stopMsgUpdate, 1000 * seconds * minutes);
+		setTimeout(stopMsgUpdate, 1000 * countdown);
 	});
 	
 	//if audioPlayer isnt null initialize it.
